@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volver a India · 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A96E;--gold-light:#E8D5A3;--saffron:#D4541A;--deep:#0E0C08;--warm:#1A1610;--sand:#F5EDD8;--sand-dim:#B8A882;--ganges:#4A7C8A;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--deep);color:var(--sand);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;padding:4rem 2rem;background:radial-gradient(ellipse at 50% 60%,#2A1F0A 0%,var(--deep) 70%);overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(201,169,110,0.08) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(212,84,26,0.06) 0%,transparent 50%);pointer-events:none;}
+.mandala{position:absolute;width:600px;height:600px;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.04;animation:slowSpin 120s linear infinite;}
+@keyframes slowSpin{to{transform:translate(-50%,-50%) rotate(360deg);}}
+.hero-tag{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;opacity:0;animation:fadeUp 1s 0.3s forwards;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,10vw,7rem);font-weight:400;line-height:1.0;letter-spacing:-0.02em;margin-bottom:0.5rem;opacity:0;animation:fadeUp 1s 0.5s forwards;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-family:'Playfair Display',serif;font-size:clamp(1rem,3vw,1.4rem);font-style:italic;color:var(--sand-dim);margin-bottom:3rem;opacity:0;animation:fadeUp 1s 0.7s forwards;}
+.hero-meta{display:flex;gap:3rem;justify-content:center;flex-wrap:wrap;margin-bottom:3.5rem;opacity:0;animation:fadeUp 1s 0.9s forwards;}
+.meta-item{text-align:center;}
+.meta-val{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--gold);display:block;}
+.meta-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--sand-dim);}
+.divider-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;align-self:center;opacity:0.4;}
+.cta-primary{display:inline-block;background:var(--gold);color:var(--deep);font-family:'DM Sans',sans-serif;font-weight:500;font-size:13px;letter-spacing:0.15em;text-transform:uppercase;padding:1rem 2.5rem;text-decoration:none;transition:all 0.3s;opacity:0;animation:fadeUp 1s 1.1s forwards;}
+.cta-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sand-dim);opacity:0;animation:fadeUp 1s 1.5s forwards;}
+.scroll-hint::after{content:'';display:block;width:1px;height:40px;background:linear-gradient(var(--gold),transparent);margin:0.5rem auto 0;animation:scrollPulse 2s ease-in-out infinite;}
+@keyframes scrollPulse{0%,100%{opacity:0.3}50%{opacity:1}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+section{padding:6rem 2rem;max-width:1100px;margin:0 auto;}
+.section-tag{font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:400;line-height:1.2;margin-bottom:1.5rem;}
+.section-title em{font-style:italic;color:var(--gold);}
+.section-body{font-size:1.05rem;line-height:1.85;color:var(--sand-dim);max-width:640px;}
+.full-divider{width:100%;height:0.5px;background:linear-gradient(90deg,transparent,rgba(201,169,110,0.3),transparent);}
+.intro-wrap{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
+@media(max-width:700px){.intro-wrap{grid-template-columns:1fr;gap:3rem;}}
+.intro-quote{font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;line-height:1.6;color:var(--sand);border-left:2px solid var(--gold);padding-left:1.5rem;margin-bottom:2rem;}
+.intro-sign{font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.stat-box{border:0.5px solid rgba(201,169,110,0.2);padding:1.5rem;}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.5rem;color:var(--gold);line-height:1;margin-bottom:0.3rem;}
+.stat-desc{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--sand-dim);}
+.route-full{background:var(--warm);padding:6rem 0;}
+.route-inner{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.route-line{display:flex;flex-direction:column;gap:0;position:relative;margin-top:3rem;}
+.route-line::before{content:'';position:absolute;left:20px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--gold),transparent);opacity:0.3;}
+.route-stop{display:grid;grid-template-columns:44px 1fr;gap:1.5rem;padding-bottom:3rem;position:relative;}
+.stop-dot-wrap{display:flex;flex-direction:column;align-items:center;}
+.stop-dot{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--gold);background:var(--deep);flex-shrink:0;margin-top:6px;position:relative;z-index:1;}
+.stop-dot.filled{background:var(--gold);}
+.stop-days{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.3rem;display:block;}
+.stop-place{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:400;margin-bottom:0.4rem;color:var(--sand);}
+.stop-desc{font-size:0.92rem;color:var(--sand-dim);line-height:1.7;margin-bottom:0.75rem;}
+.stop-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.stop-tag{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;padding:3px 10px;border:0.5px solid rgba(201,169,110,0.3);color:var(--gold);}
+.train-section{background:linear-gradient(135deg,#0E1A1F 0%,#0A1210 100%);padding:6rem 0;border-top:0.5px solid rgba(74,124,138,0.3);border-bottom:0.5px solid rgba(74,124,138,0.3);}
+.train-inner{max-width:1100px;margin:0 auto;padding:0 2rem;}
+.train-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:3rem;}
+@media(max-width:700px){.train-grid{grid-template-columns:1fr;gap:2.5rem;}}
+.train-visual{position:relative;height:280px;border:0.5px solid rgba(74,124,138,0.3);overflow:hidden;display:flex;flex-direction:column;justify-content:center;padding:2rem;}
+.train-tracks{position:absolute;bottom:0;left:0;right:0;height:3px;background:repeating-linear-gradient(90deg,var(--ganges) 0px,var(--ganges) 20px,transparent 20px,transparent 30px);opacity:0.4;}
+.train-route-viz{display:flex;align-items:center;gap:8px;margin-bottom:1.5rem;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--sand-dim);}
+.train-dot{width:8px;height:8px;border-radius:50%;background:var(--ganges);flex-shrink:0;}
+.train-line-seg{flex:1;height:1px;background:rgba(74,124,138,0.4);}
+.train-stat-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;}
+.ts{text-align:center;}
+.ts-val{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--ganges);}
+.ts-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--sand-dim);}
+.highlight-box{background:rgba(74,124,138,0.08);border:0.5px solid rgba(74,124,138,0.25);padding:1.5rem;margin-top:1.5rem;}
+.highlight-box p{font-size:0.92rem;color:var(--sand-dim);line-height:1.75;}
+.highlight-box strong{color:var(--sand);font-weight:500;}
+.includes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:rgba(201,169,110,0.1);margin-top:3rem;}
+.include-item{background:var(--deep);padding:2rem;position:relative;overflow:hidden;transition:background 0.3s;}
+.include-item:hover{background:var(--warm);}
+.include-icon{font-size:1.5rem;margin-bottom:1rem;display:block;}
+.include-title{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:0.5rem;color:var(--sand);}
+.include-desc{font-size:0.88rem;color:var(--sand-dim);line-height:1.65;}
+.include-check{position:absolute;top:1.5rem;right:1.5rem;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);}
+.price-section{text-align:center;}
+.price-wrap{display:inline-block;border:1px solid rgba(201,169,110,0.3);padding:4rem 5rem;position:relative;margin:3rem 0;}
+@media(max-width:600px){.price-wrap{padding:2.5rem 2rem;}}
+.price-wrap::before,.price-wrap::after{content:'✦';position:absolute;color:var(--gold);font-size:12px;opacity:0.4;}
+.price-wrap::before{top:1rem;left:1rem;}
+.price-wrap::after{bottom:1rem;right:1rem;}
+.price-from{font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sand-dim);margin-bottom:0.5rem;}
+.price-amount{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,8vw,5.5rem);color:var(--gold);line-height:1;margin-bottom:0.5rem;}
+.price-per{font-size:13px;color:var(--sand-dim);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2rem;}
+.price-note{font-size:0.9rem;color:var(--sand-dim);line-height:1.7;max-width:400px;margin:0 auto 2rem;}
+.price-signal{display:inline-block;border:0.5px solid var(--saffron);color:var(--saffron);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;padding:0.5rem 1.2rem;margin-bottom:2rem;}
+.price-includes{display:flex;flex-wrap:wrap;justify-content:center;gap:0.5rem 1.5rem;font-size:12px;color:var(--sand-dim);letter-spacing:0.05em;max-width:500px;margin:0 auto;}
+.price-includes span::before{content:'✓  ';color:var(--gold);}
+.details-wrap{margin-top:3rem;}
+.detail-row{display:grid;grid-template-columns:200px 1fr;gap:2rem;padding:1.25rem 0;border-bottom:0.5px solid rgba(201,169,110,0.1);align-items:start;}
+@media(max-width:600px){.detail-row{grid-template-columns:1fr;gap:0.25rem;}}
+.detail-label{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);padding-top:0.15rem;}
+.detail-val{font-size:0.95rem;color:var(--sand-dim);line-height:1.7;}
+.detail-val strong{color:var(--sand);font-weight:500;}
+.no-list{list-style:none;}
+.no-list li{padding:0.4rem 0;font-size:0.9rem;color:var(--sand-dim);}
+.no-list li::before{content:'—  ';color:rgba(201,169,110,0.4);}
+.cta-final{background:linear-gradient(180deg,var(--deep) 0%,#1A1008 100%);padding:8rem 2rem;text-align:center;border-top:0.5px solid rgba(201,169,110,0.15);}
+.cta-contact{display:flex;flex-direction:column;align-items:center;gap:0.75rem;margin-top:2rem;}
+.contact-line{font-size:13px;letter-spacing:0.1em;color:var(--sand-dim);}
+.contact-em{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--gold);font-style:italic;}
+footer{padding:2rem;text-align:center;border-top:0.5px solid rgba(201,169,110,0.1);font-size:11px;letter-spacing:0.1em;color:rgba(184,168,130,0.4);text-transform:uppercase;}
+</style>
+</head>
+<body>
+
+<section class="hero" style="padding:0;max-width:none;">
+  <svg class="mandala" viewBox="0 0 400 400" fill="none">
+    <circle cx="200" cy="200" r="180" stroke="#C9A96E" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="150" stroke="#C9A96E" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="120" stroke="#C9A96E" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="80" stroke="#C9A96E" stroke-width="0.5"/>
+    <circle cx="200" cy="200" r="40" stroke="#C9A96E" stroke-width="0.5"/>
+    <line x1="200" y1="20" x2="200" y2="380" stroke="#C9A96E" stroke-width="0.5"/>
+    <line x1="20" y1="200" x2="380" y2="200" stroke="#C9A96E" stroke-width="0.5"/>
+    <line x1="73" y1="73" x2="327" y2="327" stroke="#C9A96E" stroke-width="0.5"/>
+    <line x1="327" y1="73" x2="73" y2="327" stroke="#C9A96E" stroke-width="0.5"/>
+    <polygon points="200,30 230,90 200,80 170,90" fill="#C9A96E" opacity="0.3"/>
+    <polygon points="200,370 230,310 200,320 170,310" fill="#C9A96E" opacity="0.3"/>
+    <polygon points="30,200 90,230 80,200 90,170" fill="#C9A96E" opacity="0.3"/>
+    <polygon points="370,200 310,230 320,200 310,170" fill="#C9A96E" opacity="0.3"/>
+  </svg>
+  <p class="hero-tag">Octubre · Noviembre 2026</p>
+  <h1>Volver a <em>India</em></h1>
+  <p class="hero-sub">Un viaje que cambia algo para siempre</p>
+  <div class="hero-meta">
+    <div class="meta-item"><span class="meta-val">17</span><span class="meta-label">Días</span></div>
+    <div class="divider-dot"></div>
+    <div class="meta-item"><span class="meta-val">4</span><span class="meta-label">Destinos</span></div>
+    <div class="divider-dot"></div>
+    <div class="meta-item"><span class="meta-val">10</span><span class="meta-label">Plazas</span></div>
+    <div class="divider-dot"></div>
+    <div class="meta-item"><span class="meta-val">1975€</span><span class="meta-label">Todo incluido</span></div>
+  </div>
+  <a href="#intro" class="cta-primary">Descubrir el viaje</a>
+  <span class="scroll-hint">Continúa</span>
+</section>
+
+<div class="full-divider"></div>
+
+<section id="intro" style="padding-top:7rem;padding-bottom:7rem;max-width:1100px;">
+  <div class="intro-wrap">
+    <div>
+      <p class="section-tag">La historia detrás del viaje</p>
+      <div class="intro-quote">"Completé mis 2000 horas de formación de yoga en Rishikesh. Fue lo más intenso y lo más bonito que he vivido. Este octubre, vuelvo — y os llevo conmigo."</div>
+      <p class="section-body">No es un paquete turístico. No hay autobuses con guía por megáfono. Es un grupo pequeño de diez personas que viajan con alguien que conoce India de verdad — que vivió en sus ashrams, practicó al amanecer junto al Ganges y aprendió a escuchar el silencio del Himalaya.<br><br>Rishikesh. Dharamsala. Varanasi. Delhi. Cuatro ciudades que representan cuatro formas completamente distintas de entender lo sagrado.</p>
+      <br>
+      <p class="intro-sign">— Tu guía · Profesora de yoga 2000h · Especialista en Sound Healing</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-box"><div class="stat-num">1</div><div class="stat-desc">Pais</div></div>
+      <div class="stat-box"><div class="stat-num">10</div><div class="stat-desc">Plazas · grupo íntimo</div></div>
+      <div class="stat-box"><div class="stat-num">4</div><div class="stat-desc">Ciudades sagradas</div></div>
+      <div class="stat-box"><div class="stat-num">0</div><div class="stat-desc">Experiencia previa de yoga necesaria</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<div class="route-full">
+  <div class="route-inner">
+    <p class="section-tag">El itinerario</p>
+    <h2 class="section-title">La ruta completa,<br><em>paso a paso</em></h2>
+    <div class="route-line">
+      <div class="route-stop">
+        <div class="stop-dot-wrap"><div class="stop-dot filled"></div></div>
+        <div>
+          <span class="stop-days">Día 1</span>
+          <div class="stop-place">Barcelona → Delhi</div>
+          <p class="stop-desc">Vuelo internacional nocturno con escala (Etihad, Qatar o Emirates). Llegada a Delhi. Hotel junto al aeropuerto para descansar antes del gran salto.</p>
+          <div class="stop-tags"><span class="stop-tag">Vuelo ~11–13h</span><span class="stop-tag">Hotel aeropuerto</span></div>
+        </div>
+      </div>
+      <div class="route-stop">
+        <div class="stop-dot-wrap"><div class="stop-dot filled"></div></div>
+        <div>
+          <span class="stop-days">Día 2</span>
+          <div class="stop-place">Delhi → Dehradun → <em style="font-family:'Playfair Display',serif;color:var(--gold);">Tapovan</em></div>
+          <p class="stop-desc">Vuelo doméstico de 50 minutos a Dehradun. Taxi privado en minivan hasta Tapovan, el rincón más espiritual de Rishikesh. Check-in en el Tao Homestay, a metros del Ganges. Primera Ganga Aarti al atardecer.</p>
+          <div class="stop-tags"><span class="stop-tag">Vuelo doméstico 50 min</span><span class="stop-tag">Tao Homestay</span><span class="stop-tag">Primera Aarti</span></div>
+        </div>
+      </div>
+      <div class="route-stop">
+        <div class="stop-dot-wrap"><div class="stop-dot"></div></div>
+        <div>
+          <span class="stop-days">Días 3 – 6 · 4 noches</span>
+          <div class="stop-place"><em style="font-family:'Playfair Display',serif;color:var(--gold);">Tapovan</em> · Rishikesh</div>
+          <p class="stop-desc">La capital mundial del yoga. Rutina de vida en el ashram: despertar antes del amanecer, caminar hasta el monasterio budista con las primeras luces, yoga cada mañana guiado por tu profesora, baño ritual en las aguas del Ganges, tarde libre para explorar Laxman Jhula y el mercado. Cada noche sin excepción: la Ganga Aarti — cientos de lámparas de fuego flotando sobre el río sagrado.</p>
+          <div class="stop-tags"><span class="stop-tag">Yoga al amanecer</span><span class="stop-tag">Monasterio</span><span class="stop-tag">Baño en el Ganges</span><span class="stop-tag">Aarti cada noche</span><span class="stop-tag">Sound Healing</span></div>
+        </div>
+      </div>
+      <div class="route-stop">
+        <div class="stop-dot-wrap"><div class="stop-dot"></div></div>
+        <div>
+          <span class="stop-days">Día 7 · Trayecto</span>
+          <div class="stop-place">Tapovan → <em style="font-family:'Playfair Display',serif;color:var(--gold);">Dharamsala</em></div>
+          <p class="stop-desc">Bus o taxi compartido por carretera de montaña — un trayecto de 8 horas espectacular a través de los Himalayas. Paisajes que no olvidarás. Llegada a McLeod Ganj al caer la tarde.</p>
+          <div class="stop-tags"><span class="stop-tag">Carretera himalaya</span><span class="stop-tag">~8h</span></div>
+        </div>
+      </div>
+      <div class="route-stop">
+        <div class="stop-dot-wrap"><div class="stop-dot"></div></div>
+        <div>
+          <span class="stop-days">Días 8 – 10 · 3 noches</span>
+          <div class="stop-place"><em style="font-family:'Playfair Display',serif;color:var(--gold);">McLeod Ganj</em> · Dharamsala</div>
+          <p class="stop-desc">La pequeña Lhasa. Aquí vive en el exilio Su Santidad el Dalai Lama. Curso de meditación con un maestro budista tibetano — dos sesiones diarias de práctica. Visita al Templo Tsuglagkhang, residencia de Su Santidad. Calles de monjes con túnicas azafrán, cafeterías tibetanas, la biblioteca de filosofía budista y las vistas más impresionantes del Himalaya.</p>
+          <div class="stop-tags"><span class="stop-tag">Maestro budista</span><span class="stop-tag">Templo Dalai Lama</span><span class="stop-tag">Meditación</span><span class="stop-tag">Cultura tibetana</span></div>
+        </div>
+      </div>
+      <div class="route-stop">
+        <div class="stop-dot-wrap"><div class="stop-dot"></div></div>
+        <div>
+          <span class="stop-days">Día 11 · Tren nocturno</span>
+          <div class="stop-place">Dharamsala → <em style="font-family:'Playfair Display',serif;color:var(--gold);">Varanasi</em></div>
+          <p class="stop-desc">El trayecto más icónico del viaje. Tren nocturno desde Pathankot hasta Varanasi — 18 horas cruzando el norte de India en litera. India entera desfilando por la ventana: campos, pueblos, ciudades que se despiertan, vendedores de chai en los andenes. Una experiencia en sí misma que no da ningún avión.</p>
+          <div class="stop-tags"><span class="stop-tag">🚂 Tren nocturno</span><span class="stop-tag">18h · literas</span><span class="stop-tag">India real</span></div>
+        </div>
+      </div>
+      <div class="route-stop">
+        <div class="stop-dot-wrap"><div class="stop-dot"></div></div>
+        <div>
+          <span class="stop-days">Días 12 – 14 · 3 noches</span>
+          <div class="stop-place"><em style="font-family:'Playfair Display',serif;color:var(--gold);">Varanasi</em> · La ciudad eterna</div>
+          <p class="stop-desc">La ciudad más antigua del mundo en uso continuado. Aquí el tiempo tiene otro ritmo. Amanecer en barca flotando por el Ganges mientras la ciudad despierta y los peregrinos se bañan. La Ganga Aarti de Dashashwamedh Ghat — la más espectacular de India. El Templo de Kashi Vishwanath. Los ghats de cremación de Manikarnika — donde el fuego sagrado lleva ardiendo miles de años sin apagarse. Excursión a Sarnath: donde Buda pronunció su primer sermón.</p>
+          <div class="stop-tags"><span class="stop-tag">Barca al amanecer</span><span class="stop-tag">Ganga Aarti</span><span class="stop-tag">Kashi Vishwanath</span><span class="stop-tag">Manikarnika Ghat</span><span class="stop-tag">Sarnath</span></div>
+        </div>
+      </div>
+      <div class="route-stop">
+        <div class="stop-dot-wrap"><div class="stop-dot"></div></div>
+        <div>
+          <span class="stop-days">Días 15 – 16 · 2 noches</span>
+          <div class="stop-place"><em style="font-family:'Playfair Display',serif;color:var(--gold);">Delhi</em> · El gran contraste</div>
+          <p class="stop-desc">El choque final. Vuelo de 1h desde Varanasi. Dos días completos en la capital: Old Delhi en tuk-tuk, el laberinto de Chandni Chowk, las especias que te marean, el Qutub Minar, la tumba de Humayun, India Gate. Compras en los mercados. La última noche: cena de despedida del grupo.</p>
+          <div class="stop-tags"><span class="stop-tag">Old Delhi</span><span class="stop-tag">Tuk-tuk</span><span class="stop-tag">Qutub Minar</span><span class="stop-tag">Mercados</span><span class="stop-tag">Cena grupo</span></div>
+        </div>
+      </div>
+      <div class="route-stop" style="padding-bottom:0">
+        <div class="stop-dot-wrap"><div class="stop-dot filled"></div></div>
+        <div>
+          <span class="stop-days">Día 17</span>
+          <div class="stop-place">Delhi → Barcelona</div>
+          <p class="stop-desc">Transfer al aeropuerto. Vuelo de vuelta. Llegas a casa siendo otra persona.</p>
+          <div class="stop-tags"><span class="stop-tag">Vuelo internacional</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="train-section">
+  <div class="train-inner">
+    <p class="section-tag">El momento más especial</p>
+    <h2 class="section-title">El tren nocturno<br><em>Pathankot → Varanasi</em></h2>
+    <div class="train-grid">
+      <div>
+        <p style="font-size:1rem;color:var(--sand-dim);line-height:1.85;margin-bottom:1.5rem;">Ningún avión te lleva de verdad de un sitio a otro. El tren sí. Dieciocho horas cruzando el norte de India en litera, con la ventana como pantalla y la India real desfilando ante ti.</p>
+        <p style="font-size:1rem;color:var(--sand-dim);line-height:1.85;margin-bottom:1.5rem;">Vendedores de chai que suben en las paradas gritando "Chai, chai, chai". Familias que comparten su comida. Campos de trigo al amanecer. Ciudades que se despiertan mientras tú tomas el primer café de la mañana asomado a la ventanilla.</p>
+        <div class="highlight-box"><p>Después de diez días en India, este tren no es un inconveniente — es el regalo. El momento en que el grupo descansa, comparte, procesa todo lo vivido y llega a Varanasi desde dentro, no desde el aire.</p></div>
+      </div>
+      <div class="train-visual">
+        <div class="train-route-viz">
+          <div class="train-dot"></div>
+          <span>Pathankot</span>
+          <div class="train-line-seg"></div>
+          <span style="font-size:9px;color:rgba(74,124,138,0.5);">~18h</span>
+          <div class="train-line-seg"></div>
+          <span>Varanasi</span>
+          <div class="train-dot"></div>
+        </div>
+        <div class="train-stat-row">
+          <div class="ts"><div class="ts-val">18h</div><div class="ts-label">Duración</div></div>
+          <div class="ts"><div class="ts-val">~15€</div><div class="ts-label">Por persona</div></div>
+          <div class="ts"><div class="ts-val">AC</div><div class="ts-label">3 Tier Sleeper</div></div>
+        </div>
+        <div class="train-tracks"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="full-divider"></div>
+
+<section style="max-width:1100px;padding-top:7rem;padding-bottom:2rem;">
+  <p class="section-tag">Lo que incluye</p>
+  <h2 class="section-title">Todo organizado,<br><em>nada improvisado</em></h2>
+  <p class="section-body">El precio incluye absolutamente todo desde Barcelona hasta Barcelona. No hay sorpresas ni costes ocultos.</p>
+</section>
+
+<div style="max-width:1100px;margin:0 auto;">
+  <div class="includes-grid">
+    <div class="include-item"><span class="include-check">incluido</span><span class="include-icon">✈</span><div class="include-title">Vuelos internacionales</div><p class="include-desc">Ida y vuelta Barcelona–Delhi en clase económica con aerolínea de calidad (Etihad, Qatar o Emirates). Con equipaje documentado.</p></div>
+    <div class="include-item"><span class="include-check">incluido</span><span class="include-icon">🛫</span><div class="include-title">Vuelos domésticos</div><p class="include-desc">Delhi → Dehradun al llegar. Varanasi → Delhi antes de la recta final. Todo gestionado para que no tengas que pensar en nada.</p></div>
+    <div class="include-item"><span class="include-check">incluido</span><span class="include-icon">🏡</span><div class="include-title">Alojamiento completo</div><p class="include-desc">15 noches en total: Tao Homestay Tapovan, guesthouse en McLeod Ganj, hotel junto a los ghats en Varanasi y hotel en Delhi.</p></div>
+    <div class="include-item"><span class="include-check">incluido</span><span class="include-icon">🧘</span><div class="include-title">Yoga y Sound Healing</div><p class="include-desc">Clases diarias de yoga en Tapovan guiadas por tu profesora (2000h formación Rishikesh). Sesiones de sound healing con cuencos tibetanos.</p></div>
+    <div class="include-item"><span class="include-check">incluido</span><span class="include-icon">🙏</span><div class="include-title">Curso meditación budista</div><p class="include-desc">Dos sesiones diarias con maestro budista tibetano en McLeod Ganj. Una de las experiencias más transformadoras del viaje.</p></div>
+    <div class="include-item"><span class="include-check">incluido</span><span class="include-icon">🚂</span><div class="include-title">Tren nocturno</div><p class="include-desc">Pathankot → Varanasi en AC 3 Tier Sleeper. El trayecto más icónico del viaje — 18 horas cruzando el norte de India.</p></div>
+    <div class="include-item"><span class="include-check">incluido</span><span class="include-icon">🚌</span><div class="include-title">Todos los transfers</div><p class="include-desc">Aeropuertos, entre ciudades, tuk-tuks en Delhi. Sin estrés logístico. Tu guía se ocupa de todo.</p></div>
+    <div class="include-item"><span class="include-check">incluido</span><span class="include-icon">🍽</span><div class="include-title">Desayunos incluidos</div><p class="include-desc">Desayuno incluido en todos los alojamientos. Almuerzos y cenas libres para disfrutar de la gastronomía local.</p></div>
+    <div class="include-item"><span class="include-check">incluido</span><span class="include-icon">🎯</span><div class="include-title">Actividades y entradas</div><p class="include-desc">Barca al amanecer en Varanasi, entradas a monumentos en Delhi, guía local, tuk-tuk. Todo gestionado y pagado.</p></div>
+    <div class="include-item"><span class="include-check">incluido</span><span class="include-icon">📋</span><div class="include-title">Visado y seguro</div><p class="include-desc">Gestión del e-visa India y seguro de viaje de 17 días incluidos en el precio. Sin trámites por tu cuenta.</p></div>
+    <div class="include-item"><span class="include-check">incluido</span><span class="include-icon">📱</span><div class="include-title">SIM India con datos</div><p class="include-desc">Tarjeta SIM local con datos para tener conexión durante todo el viaje. Sin roaming ni sorpresas en la factura.</p></div>
+    <div class="include-item"><span class="include-check">incluido</span><span class="include-icon">🥂</span><div class="include-title">Cena de despedida</div><p class="include-desc">Última noche en Delhi: cena de despedida del grupo. El broche perfecto para 17 días juntos.</p></div>
+  </div>
+</div>
+
+<div class="full-divider"></div>
+
+<section class="price-section" style="max-width:1100px;padding-top:7rem;">
+  <p class="section-tag">Inversión</p>
+  <h2 class="section-title">Precio transparente,<br><em>sin letra pequeña</em></h2>
+  <div class="price-wrap">
+    <p class="price-from">Todo incluido desde</p>
+    <div class="price-amount">1975€</div>
+    <p class="price-per">por persona</p>
+    <div class="price-signal">Solo 8¡10 plazas disponibles</div>
+    <p class="price-note">Reserva tu plaza con una señal de 400€. El resto se abona en dos pagos: 50% tres meses antes y 50% un mes antes del viaje.</p>
+    <div class="price-includes">
+      <span>Vuelos internacionales y domésticos</span><span>15 noches de alojamiento</span><span>Yoga y sound healing diarios</span><span>Curso de meditación budista</span><span>Tren nocturno Pathankot–Varanasi</span><span>Todos los transfers</span><span>Desayunos incluidos</span><span>Actividades y entradas</span><span>Visado e-visa gestionado</span><span>Seguro de viaje 17 días</span><span>SIM India con datos</span><span>Cena de despedida</span>
+    </div>
+  </div>
+  <div class="details-wrap" style="text-align:left;">
+    <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:400;margin-bottom:1.5rem;color:var(--sand-dim);">Detalles del viaje</h3>
+    <div class="detail-row"><span class="detail-label">Fechas</span><span class="detail-val"><strong>Octubre – Noviembre 2026 · Fecha exacta por confirmar según disponibilidad de vuelos</strong></span></div>
+    <div class="detail-row"><span class="detail-label">Duración</span><span class="detail-val"><strong>17 días · 16 noches (1 en avión o tren)</strong></span></div>
+    <div class="detail-row"><span class="detail-label">Grupo</span><span class="detail-val"><strong>Máximo 10 viajeros + 2 guías. Formato pequeño e íntimo — así funciona la magia.</strong></span></div>
+    <div class="detail-row"><span class="detail-label">Nivel</span><span class="detail-val"><strong>Abierto a todos. No hace falta experiencia previa en yoga. Solo ganas de vivir algo diferente y mente abierta.</strong></span></div>
+    <div class="detail-row"><span class="detail-label">Salida</span><span class="detail-val"><strong>Barcelona · Aeropuerto El Prat. El grupo viaja junto desde el primer momento.</strong></span></div>
+    <div class="detail-row"><span class="detail-label">Cancelación</span><span class="detail-val">Política flexible: señal reembolsable hasta 4 meses antes. Consulta condiciones completas al reservar.</span></div>
+    <div class="detail-row"><span class="detail-label">No incluye</span><span class="detail-val"><ul class="no-list"><li>Almuerzos y cenas (presupuesta unos 10€/día — comer bien en India es baratísimo)</li><li>Masajes ayurvédicos opcionales (~20–35€/sesión)</li><li>Compras personales y souvenirs</li><li>Propinas personales a artesanos y músicos callejeros</li></ul></span></div>
+  </div>
+</section>
+
+<div class="full-divider" style="margin-top:5rem;"></div>
+
+<div class="cta-final">
+  <div style="max-width:700px;margin:0 auto;">
+    <p class="section-tag" style="text-align:center;">¿Es tu momento?</p>
+    <h2 class="section-title" style="text-align:center;">Hay cosas que no se explican.<br><em style="font-family:'Playfair Display',serif;color:#C9A96E;">Solo se viven.</em></h2>
+    <p class="section-body" style="text-align:center;margin:0 auto 2rem;">Si sientes que este viaje es para ti, escríbenos. Te contamos todos los detalles, resolvemos tus dudas y te explicamos cómo reservar tu plaza. Las 8 plazas son limitadas — los grupos pequeños se llenan antes de lo que parece.</p>
+    <div style="margin:2rem 0;text-align:center;">
+      <a href="mailto:ginamarc@gmail.com" class="cta-primary" style="font-size:12px;letter-spacing:0.2em;">Reserva tu plaza · Escríbenos</a>
+    </div>
+    <div class="cta-contact">
+      <p class="contact-line">También puedes escribirnos directamente por</p>
+      <p class="contact-em">Instagram · WhatsApp · Email</p>
+      <p class="contact-line" style="margin-top:0.5rem;font-size:11px;opacity:0.6;">Respondemos en menos de 24 horas</p>
+    </div>
+    <div style="margin-top:4rem;padding-top:3rem;border-top:0.5px solid rgba(201,169,110,0.15);text-align:center;">
+      <p style="font-family:'Playfair Display',serif;font-size:1.2rem;font-style:italic;color:var(--sand-dim);line-height:1.8;">Rishikesh. Dharamsala. Varanasi. Delhi.<br>Cuatro ciudades. Cuatro formas de entender lo sagrado.<br>Un viaje que cambia algo para siempre.</p>
+    </div>
+  </div>
+</div>
+
+<footer>Volver a India 2026 · Grupo reducido de 8 plazas · Octubre – Noviembre 2026</footer>
+</body>
+</html>
